@@ -1,0 +1,26 @@
+courses表：
++---------+------------+
+| student | class        |
++---------+------------+
+| A       | Math           |
+| B       | English        |
+| C       | Math           |
+| D       | Biology       |
+| E        | Math           |
+| F        | Computer   |
+| G       | Math           |
+| H       | Math           |
+| I         | Math          |
++---------+------------+
+
+请列出所有超过或等于5名学生的课。
+
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+
+Sql语句：
+SELECT class FROM courses GROUP BY class 
+HAVING count( DISTINCT student ) >= 5;
