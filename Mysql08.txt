@@ -1,0 +1,26 @@
++----+-------+--------+-----------+
+| Id | Name  | Salary | ManagerId |
++----+-------+--------+-----------+
+| 1  | Joe     | 70000  | 3                |
+| 2  | Henry | 80000  | 4                |
+| 3  | Sam   | 60000  | NULL          |
+| 4  | Max   | 90000  | NULL          |
++----+-------+--------+-----------+
+
+查找薪资大于其经理薪资的员工信息
+
++----------+
+| Employee |
++----------+
+| Joe           |
++----------+
+
+Sql语句：
+SELECT 
+     E1.NAME Employee 
+FROM 
+    Employee E1
+    INNER JOIN Employee E2
+    ON E1.ManagerId = E2.Id
+    AND E1.Salary > E2.Salary;
+
