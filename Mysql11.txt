@@ -1,0 +1,24 @@
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+
+查找工资第二高的员工。
+
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+没有找到返回 null 而不是不返回数据。
+
+Sql语句：
+
+SELECT
+    ( SELECT DISTINCT Salary 
+     FROM Employee 
+     ORDER BY Salary DESC 
+     LIMIT 1, 1 ) SecondHighestSalary;
