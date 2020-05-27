@@ -1,0 +1,16 @@
+
+查找工资第 N 高的员工。
+
+CREATE FUNCTION getNthHighestSalary ( N INT ) RETURNS INT BEGIN
+
+SET N = N - 1;
+RETURN ( 
+    SELECT ( 
+        SELECT DISTINCT Salary 
+        FROM Employee 
+        ORDER BY Salary DESC 
+        LIMIT N, 1 
+    ) 
+);
+
+END
